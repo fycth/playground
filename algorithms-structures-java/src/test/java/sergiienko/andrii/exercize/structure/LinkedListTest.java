@@ -65,4 +65,17 @@ public class LinkedListTest {
     l.insertAtHead(r.nextInt());
     assertEquals(randomLength + 1, l.length());
   }
+
+  @Test
+  public void testRemoveFromEnd() {
+    Random r = new Random();
+    int randomLength = r.nextInt(100);
+    LinkedList<Integer> l = new LinkedList<>();
+    Integer[] array = TestHelper.generateRandomArray(randomLength);
+    for (Integer i : array) {
+      l.appendToEnd(i);
+    }
+    l.removeFromEnd();
+    assertEquals(randomLength - 1, l.length());
+  }
 }

@@ -36,6 +36,22 @@ public class LinkedList<T extends Comparable<T>>  {
     head = head.getNextNode();
   }
 
+  public void removeFromEnd() {
+    if (head != null) {
+      if (head.getNextNode() == null) {
+        head = null;
+      } else {
+        Node h = head;
+        Node t = head.getNextNode();
+        while (t.getNextNode() != null) {
+          h = t;
+          t = h.getNextNode();
+        }
+        h.setNextNode(null);
+      }
+    }
+  }
+
   public int length() {
     Node i = head;
     int l = 0;
