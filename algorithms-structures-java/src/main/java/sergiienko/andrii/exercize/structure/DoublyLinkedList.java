@@ -36,10 +36,23 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     return null;
   }
 
+  public T findElementFromEnd(T value) {
+    Node i = tail;
+    while (i != null) {
+      if (i.getValue().compareTo(value) == 0) {
+        return value;
+      }
+      i = i.getPreviousNode();
+    }
+    return null;
+  }
+
   public void removeFromHead() {
     if (head != null) {
       head = head.getNextNode();
-      head.setPreviousNode(null);
+      if (head != null) {
+        head.setPreviousNode(null);
+      }
     }
   }
 
