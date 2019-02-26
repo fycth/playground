@@ -6,18 +6,18 @@ public class BubbleSort {
     if (l == 0) {
       return;
     }
-    boolean swapped;
+    int newLength;
     do {
-      swapped = false;
+      newLength = 0;
       for (int i = 0; i < l - 1; i++) {
         if (ints[i].compareTo(ints[i + 1]) > 0) {
           T buffer = ints[i + 1];
           ints[i + 1] = ints[i];
           ints[i] = buffer;
-          swapped = true;
+          newLength = i + 1;
         }
       }
-      l--;
-    } while (swapped);
+      l = newLength;
+    } while (newLength > 1);
   }
 }
