@@ -3,6 +3,30 @@ package sergiienko.andrii.exercize.structure;
 public class LinkedList<T extends Comparable<T>>  {
   private Node head;
 
+  public void insertSorted(T value) {
+    Node newNode = new Node(value);
+    if (head == null) {
+      head = newNode;
+    } else {
+      Node leftNode = null;
+      Node currentNode = head;
+      while (currentNode != null && currentNode.getValue().compareTo(value) < 0) {
+        leftNode = currentNode;
+        currentNode = currentNode.getNextNode();
+      }
+      newNode.setNextNode(currentNode);
+      if (currentNode == null) {
+        leftNode.setNextNode(newNode);
+      } else {
+        if (leftNode != null) {
+          leftNode.setNextNode(newNode);
+        } else {
+          head = newNode;
+        }
+      }
+    }
+  }
+
   public void appendToEnd(T value) {
     if (head == null) {
       head = new Node(value);

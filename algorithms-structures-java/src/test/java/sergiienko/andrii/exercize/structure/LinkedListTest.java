@@ -3,6 +3,8 @@ package sergiienko.andrii.exercize.structure;
 import org.junit.Test;
 import sergiienko.andrii.exercize.TestHelper;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class LinkedListTest extends TestHelper {
@@ -21,6 +23,23 @@ public class LinkedListTest extends TestHelper {
       l.appendToEnd(i);
     }
     assertEquals(randomLength, l.length());
+  }
+
+  @Test
+  public void testInsertSorted() {
+    LinkedList<Integer> l = new LinkedList<>();
+    int randomLength = getRandomArrayLength();
+    Integer[] array = generateRandomArray(randomLength);
+    for (Integer i : array) {
+      l.insertSorted(i);
+    }
+    Arrays.sort(array);
+    StringBuilder sb = new StringBuilder("{ ");
+    for (Integer i : array) {
+      sb.append(i).append(" ");
+    }
+    sb.append("}");
+    assertEquals(sb.toString(), l.toString());
   }
 
   @Test
