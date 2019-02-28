@@ -80,6 +80,29 @@ public class LinkedList<T extends Comparable<T>> {
     return l;
   }
 
+  public void sort() {
+    Node h = null;
+    while (head != null) {
+      Node current = head;
+      head = head.getNextNode();
+      if (h == null || current.getValue().compareTo(h.getValue()) < 0) {
+        current.setNextNode(h);
+        h = current;
+      } else {
+        Node p = h;
+        while (true) {
+          if (p.getNextNode() == null || current.getValue().compareTo(p.getNextNode().getValue()) < 0) {
+            current.setNextNode(p.getNextNode());
+            p.setNextNode(current);
+            break;
+          }
+          p = p.getNextNode();
+        }
+      }
+    }
+    head = h;
+  }
+
   @Override
   public String toString() {
     Node i = head;

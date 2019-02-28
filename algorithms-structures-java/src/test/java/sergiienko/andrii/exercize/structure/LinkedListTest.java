@@ -43,6 +43,24 @@ public class LinkedListTest extends TestHelper {
   }
 
   @Test
+  public void testSort() {
+    LinkedList<Integer> l = new LinkedList<>();
+    int randomLength = getRandomArrayLength();
+    Integer[] array = generateRandomArray(randomLength);
+    for (Integer i : array) {
+      l.insertAtHead(i);
+    }
+    l.sort();
+    Arrays.sort(array);
+    StringBuilder sb = new StringBuilder("{ ");
+    for (Integer i : array) {
+      sb.append(i).append(" ");
+    }
+    sb.append("}");
+    assertEquals(sb.toString(), l.toString());
+  }
+
+  @Test
   public void testFindElement() {
     LinkedList<Integer> l = new LinkedList<>();
     int randomLength = getRandomArrayLength();
