@@ -58,6 +58,21 @@ public class LinkedListTest extends TestHelper {
     }
     sb.append("}");
     assertEquals(sb.toString(), l.toString());
+
+    l = new LinkedList<>();
+    l.sort();
+    assertEquals("{ }", l.toString());
+
+    l = new LinkedList<>();
+    l.insertAtHead(randomLength);
+    l.sort();
+    assertEquals("{ " + randomLength + " }", l.toString());
+
+    l = new LinkedList<>();
+    l.insertAtHead(randomLength);
+    l.insertAtHead(randomLength);
+    l.sort();
+    assertEquals("{ " + randomLength + " " + randomLength + " }", l.toString());
   }
 
   @Test

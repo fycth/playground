@@ -92,6 +92,21 @@ public class DoublyLinkedListTest extends TestHelper {
     }
     sb.append("}");
     assertEquals(sb.toString(), l.toString());
+
+    l = new DoublyLinkedList<>();
+    l.sort();
+    assertEquals("{ }", l.toString());
+
+    l = new DoublyLinkedList<>();
+    l.insertAtHead(randomLength);
+    l.sort();
+    assertEquals("{ " + randomLength + " }", l.toString());
+
+    l = new DoublyLinkedList<>();
+    l.insertAtHead(randomLength);
+    l.insertAtHead(randomLength);
+    l.sort();
+    assertEquals("{ " + randomLength + " " + randomLength + " }", l.toString());
   }
 
   @Test
