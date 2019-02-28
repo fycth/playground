@@ -19,6 +19,6 @@ public class TestHelper {
     return array;
   }
   protected int getRandomArrayLength() {
-    return Math.abs(r.nextInt(DEFAULT_ARRAY_SIZE - 1)) + 1;
+    return Math.abs(r.nextInt(DEFAULT_ARRAY_SIZE - 1)) + 3;
   }
 }
