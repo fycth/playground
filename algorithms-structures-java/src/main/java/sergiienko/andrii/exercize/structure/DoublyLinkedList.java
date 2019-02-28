@@ -70,6 +70,34 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     }
   }
 
+  public void sort() {
+    Node h = null;
+    while (head != null) {
+      Node current = head;
+      head = head.getNextNode();
+      if (h == null || current.getValue().compareTo(h.getValue()) < 0) {
+        current.setNextNode(h);
+        if (h != null) {
+          h.setPreviousNode(current);
+        }
+        h = current;
+      } else {
+        Node p = h;
+        while (true) {
+          if (p.getNextNode() == null || current.getValue().compareTo(p.getNextNode().getValue()) < 0) {
+            current.setNextNode(p.getNextNode());
+            p.setPreviousNode(current);
+            p.setNextNode(current);
+            current.setPreviousNode(p);
+            break;
+          }
+          p = p.getNextNode();
+        }
+      }
+    }
+    head = h;
+  }
+
   public int length() {
     Node i = head;
     int l = 0;

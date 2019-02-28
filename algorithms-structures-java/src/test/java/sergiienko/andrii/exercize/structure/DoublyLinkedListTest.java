@@ -3,6 +3,8 @@ package sergiienko.andrii.exercize.structure;
 import org.junit.Test;
 import sergiienko.andrii.exercize.TestHelper;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.assertEquals;
 
 public class DoublyLinkedListTest extends TestHelper {
@@ -72,6 +74,24 @@ public class DoublyLinkedListTest extends TestHelper {
     }
     l.insertAtHead(Math.abs(r.nextInt()));
     assertEquals(randomLength + 1, l.length());
+  }
+
+  @Test
+  public void testSort() {
+    DoublyLinkedList<Integer> l = new DoublyLinkedList<>();
+    int randomLength = getRandomArrayLength();
+    Integer[] array = generateRandomArray(randomLength);
+    for (Integer i : array) {
+      l.insertAtHead(i);
+    }
+    l.sort();
+    Arrays.sort(array);
+    StringBuilder sb = new StringBuilder("{ ");
+    for (Integer i : array) {
+      sb.append(i).append(" ");
+    }
+    sb.append("}");
+    assertEquals(sb.toString(), l.toString());
   }
 
   @Test
