@@ -116,6 +116,22 @@ public class LinkedList<T extends Comparable<T>> {
     head = h;
   }
 
+  public void removeElement(T element) {
+    Node i = head;
+    Node l = null;
+    while (i != null) {
+      if (i.getValue().compareTo(element) == 0) {
+        if (l != null) {
+          l.setNextNode(i.getNextNode());
+        } else {
+          head = i.getNextNode();
+        }
+      }
+      l = i;
+      i = i.getNextNode();
+    }
+  }
+
   @Override
   public String toString() {
     Node i = head;

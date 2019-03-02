@@ -123,4 +123,22 @@ public class LinkedListTest extends TestHelper {
     l.removeFromEnd();
     assertEquals(randomLength - 1, l.length());
   }
+
+  @Test
+  public void testRemoveElement() {
+    LinkedList<Integer> l = new LinkedList<>();
+    int randomLength = getRandomArrayLength();
+    Integer[] array = generateRandomArray(randomLength);
+    for (Integer i : array) {
+      l.insertAtHead(i);
+    }
+    int initialArrayLength = l.length();
+    Integer randomElement = array[Math.abs(r.nextInt(randomLength - 1))];
+    l.removeElement(randomElement);
+    int newArrayLength = l.length();
+
+    assertEquals(initialArrayLength - 1, newArrayLength);
+    // the array contains unique elements, so the following test works
+    assertNull(l.findElement(randomElement));
+  }
 }
