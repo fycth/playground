@@ -2,6 +2,7 @@ package sergiienko.andrii.exercize.structure;
 
 public class LinkedList<T extends Comparable<T>> {
   private Node head;
+  private Node tail;
 
   public void insertSorted(T value) {
     Node newNode = new Node(value);
@@ -12,6 +13,9 @@ public class LinkedList<T extends Comparable<T>> {
       currentNode = currentNode.getNextNode();
     }
     newNode.setNextNode(currentNode);
+    if (currentNode == null) {
+      tail = newNode;
+    }
     if (leftNode != null) {
       leftNode.setNextNode(newNode);
     } else {
@@ -20,14 +24,17 @@ public class LinkedList<T extends Comparable<T>> {
   }
 
   public void appendToEnd(T value) {
+    Node newNode = new Node(value);
     if (head == null) {
-      head = new Node(value);
+      head = newNode;
     } else {
-      Node i = head;
-      while (i.getNextNode() != null) {
-        i = i.getNextNode();
+      if (tail == null) {
+        tail = newNode;
+        head.setNextNode(tail);
+      } else {
+        tail.setNextNode(newNode);
+        tail = newNode;
       }
-      i.setNextNode(new Node(value));
     }
   }
 
@@ -57,6 +64,7 @@ public class LinkedList<T extends Comparable<T>> {
   public void removeFromEnd() {
     if (head != null) {
       if (head.getNextNode() == null) {
+        tail = null;
         head = null;
       } else {
         Node h = head;
@@ -66,6 +74,7 @@ public class LinkedList<T extends Comparable<T>> {
           t = h.getNextNode();
         }
         h.setNextNode(null);
+        tail = h;
       }
     }
   }
@@ -87,6 +96,9 @@ public class LinkedList<T extends Comparable<T>> {
       head = head.getNextNode();
       if (h == null || current.getValue().compareTo(h.getValue()) < 0) {
         current.setNextNode(h);
+        if (h == null) {
+          tail = current;
+        }
         h = current;
       } else {
         Node p = h;
@@ -94,6 +106,7 @@ public class LinkedList<T extends Comparable<T>> {
           if (p.getNextNode() == null || current.getValue().compareTo(p.getNextNode().getValue()) < 0) {
             current.setNextNode(p.getNextNode());
             p.setNextNode(current);
+            tail = current;
             break;
           }
           p = p.getNextNode();
