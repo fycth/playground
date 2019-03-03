@@ -132,6 +132,19 @@ public class LinkedList<T extends Comparable<T>> {
     }
   }
 
+  public boolean sorted() {
+    Node i = head;
+    T v = null;
+    while (i != null) {
+      if (v != null && v.compareTo(i.getValue()) > 0) {
+        return false;
+      }
+      v = i.getValue();
+      i = i.getNextNode();
+    }
+    return true;
+  }
+
   @Override
   public String toString() {
     Node i = head;
