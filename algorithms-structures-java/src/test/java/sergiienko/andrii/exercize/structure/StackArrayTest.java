@@ -5,11 +5,11 @@ import sergiienko.andrii.exercize.TestHelper;
 
 import static org.junit.Assert.*;
 
-public class StackTest extends TestHelper {
+public class StackArrayTest extends TestHelper {
   @Test
   public void testEmptyStack() {
     Integer r = getRandomArrayLength();
-    Stack<Integer> stack = new Stack<>(r);
+    StackArray<Integer> stack = new StackArray<>(r);
     assertTrue(stack.isEmpty());
     stack.push(r);
     assertFalse(stack.isEmpty());

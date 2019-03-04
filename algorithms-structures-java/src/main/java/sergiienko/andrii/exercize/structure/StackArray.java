@@ -2,11 +2,11 @@ package sergiienko.andrii.exercize.structure;
 
 // stack implementation using array
 
-public class Stack<T> {
+public class StackArray<T> {
   private final Object[] array;
   private int top = -1;
 
-  public Stack(int size) {
+  public StackArray(int size) {
     array = new Object[size];
   }
 
