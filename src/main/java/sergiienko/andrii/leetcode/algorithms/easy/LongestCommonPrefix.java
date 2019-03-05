@@ -1,4 +1,4 @@
-package sergiienko.andrii.leetcode;
+package sergiienko.andrii.leetcode.algorithms.easy;
 
 public class LongestCommonPrefix {
   public String longestCommonPrefix(String[] strs) {

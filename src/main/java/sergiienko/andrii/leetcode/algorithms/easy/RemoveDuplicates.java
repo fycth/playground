@@ -1,4 +1,4 @@
-package sergiienko.andrii.leetcode;
+package sergiienko.andrii.leetcode.algorithms.easy;
 
 public class RemoveDuplicates {
   public int removeDuplicates(int[] nums) {
