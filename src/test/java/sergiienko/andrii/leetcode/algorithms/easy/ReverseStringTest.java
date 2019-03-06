@@ -32,7 +32,7 @@ public class ReverseStringTest {
     char[] input = new char[]{'H','a'};
     char[] actual = new char[input.length];
     System.arraycopy(input, 0, actual, 0, input.length);
-    char[] expected = new char[]{'h','a'};
+    char[] expected = new char[]{'a','H'};
     new ReverseString().reverseString(actual);
     for (int i = 0; i < expected.length; i++) {
       assertEquals(expected[i], actual[i]);
