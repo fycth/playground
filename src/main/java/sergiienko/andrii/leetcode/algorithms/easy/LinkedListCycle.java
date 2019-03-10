@@ -2,16 +2,12 @@ package sergiienko.andrii.leetcode.algorithms.easy;
 
 public class LinkedListCycle {
   public boolean hasCycle(ListNode head) {
-    ListNode r = head;
+    if (head == null || head.next == null) return false;
+    ListNode r = head.next;
     ListNode t = head;
-    boolean f = false;
     while (r != null && t != null) {
-      if (r.val == t.val) {
-        if (f) {
-          return true;
-        } else {
-          f = true;
-        }
+      if (r == t) {
+        return true;
       }
       t = t.next;
       r = r.next;
