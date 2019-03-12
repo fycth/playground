@@ -1,8 +1,8 @@
 package sergiienko.andrii.exercize.algorithm.sort;
 
 public class QuickSort {
-  public <T extends Comparable<T>> void sort(T[] ints) {
-    quickSort(ints, 0, ints.length - 1);
+  public <T extends Comparable<T>> void sort(T[] input) {
+    quickSort(input, 0, input.length - 1);
   }
   private <T extends Comparable<T>> void quickSort(T[] ints, int begin, int end) {
     if (begin >= end) return;

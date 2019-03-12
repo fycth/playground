@@ -2,9 +2,9 @@ package sergiienko.andrii.exercize.algorithm.sort;
 
 public class MergeSort {
 
-  public <T extends Comparable<T>> void sort(T[] ints) {
-    Object[] output = new Object[ints.length];
-    mergesort(ints, output, 0, ints.length - 1);
+  public <T extends Comparable<T>> void sort(T[] input) {
+    Object[] output = new Object[input.length];
+    mergesort(input, output, 0, input.length - 1);
   }
 
   @SuppressWarnings("unchecked")
