@@ -2,8 +2,6 @@ package sergiienko.andrii.exercize.structure;
 
 import java.lang.reflect.Array;
 
-//todo add toString method
-
 //todo add getKeys method
 
 //todo add getValues method
@@ -85,6 +83,18 @@ public class HashMap<K extends Comparable<K>, V> {
       }
       mapEntry = mapEntry.next;
     }
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder("{ ");
+    for (MapEntry m : array) {
+      while (m != null) {
+        sb.append("(").append(m.key.toString()).append(" => ").append(m.value.toString()).append(") ");
+        m = m.next;
+      }
+    }
+    sb.append("}");
+    return sb.toString();
   }
 
   private class MapEntry {

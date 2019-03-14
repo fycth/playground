@@ -57,4 +57,11 @@ public class HashMapTest {
     hashMap.remove("2");
     assertNull(hashMap.get("2"));
   }
+  @Test
+  public void case5() {
+    HashMap<String, String> hashMap = new HashMap<>();
+    hashMap.put("key1", "value1");
+    hashMap.put("hello", "world");
+    assertEquals("{ (hello => world) (key1 => value1) }", hashMap.toString());
+  }
 }
