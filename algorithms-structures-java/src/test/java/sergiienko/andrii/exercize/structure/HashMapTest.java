@@ -64,4 +64,8 @@ public class HashMapTest {
     hashMap.put("hello", "world");
     assertEquals("{ (hello => world) (key1 => value1) }", hashMap.toString());
   }
+  @Test
+  public void case6() {
+    assertEquals("{  }", new HashMap<>().toString());
+  }
 }
