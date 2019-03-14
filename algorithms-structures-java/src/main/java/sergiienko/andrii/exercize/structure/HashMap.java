@@ -4,8 +4,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-//todo add getEntries method
-
 @SuppressWarnings("unchecked")
 public class HashMap<K extends Comparable<K>, V> {
   private final int DEFAULT_CAPACITY = 10;
@@ -105,6 +103,17 @@ public class HashMap<K extends Comparable<K>, V> {
     return values;
   }
 
+  public List<MapEntry> getEntries() {
+    List<MapEntry> entries = new ArrayList<>();
+    for (MapEntry m : array) {
+      while (m != null) {
+        entries.add(m);
+        m = m.next;
+      }
+    }
+    return entries;
+  }
+
   public String toString() {
     StringBuilder sb = new StringBuilder("{ ");
     for (MapEntry m : array) {
@@ -117,7 +126,7 @@ public class HashMap<K extends Comparable<K>, V> {
     return sb.toString();
   }
 
-  private class MapEntry {
+  public class MapEntry {
     private final K key;
     private V value;
     private MapEntry next;
@@ -125,6 +134,12 @@ public class HashMap<K extends Comparable<K>, V> {
       this.key = key;
       this.value = value;
       this.next = next;
+    }
+    public K getKey() {
+      return this.key;
+    }
+    public V getValue() {
+      return this.value;
     }
   }
 }

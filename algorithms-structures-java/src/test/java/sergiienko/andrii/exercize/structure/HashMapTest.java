@@ -93,4 +93,19 @@ public class HashMapTest {
       assertTrue(values.contains(entry.getValue()));
     }
   }
+  @Test
+  public void case9() {
+    HashMap<String, String> hashMap = new HashMap<>();
+    Map<String, String> m = new java.util.HashMap<>();
+    Random r = new Random();
+    for (int i = 1000; i >= 0; i--) {
+      int key = r.nextInt(Integer.MAX_VALUE);
+      int value = r.nextInt(Integer.MAX_VALUE);
+      m.put(String.valueOf(key), String.valueOf(value));
+      hashMap.put(String.valueOf(key), String.valueOf(value));
+    }
+    for (HashMap<String, String>.MapEntry entry : hashMap.getEntries()) {
+      assertEquals(m.get(entry.getKey()), entry.getValue());
+    }
+  }
 }
