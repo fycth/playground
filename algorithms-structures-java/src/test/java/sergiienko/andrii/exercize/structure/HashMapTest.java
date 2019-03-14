@@ -73,6 +73,7 @@ public class HashMapTest {
   @Test
   public void case7() {
     assertEquals(0, new HashMap<>().getKeys().size());
+    assertEquals(0, new HashMap<>().getValues().size());
   }
   @Test
   public void case8() {
@@ -86,9 +87,10 @@ public class HashMapTest {
       hashMap.put(String.valueOf(key), String.valueOf(value));
     }
     List<String> keys = hashMap.getKeys();
+    List<String> values = hashMap.getValues();
     for (Map.Entry<String, String> entry : m.entrySet()) {
-      String key = entry.getKey();
-      assertTrue(keys.contains(key));
+      assertTrue(keys.contains(entry.getKey()));
+      assertTrue(values.contains(entry.getValue()));
     }
   }
 }

@@ -4,8 +4,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-//todo add getValues method
-
 //todo add getEntries method
 
 @SuppressWarnings("unchecked")
@@ -94,6 +92,17 @@ public class HashMap<K extends Comparable<K>, V> {
       }
     }
     return keys;
+  }
+
+  public List<V> getValues() {
+    List<V> values = new ArrayList<>();
+    for (MapEntry m : array) {
+      while (m != null) {
+        values.add(m.value);
+        m = m.next;
+      }
+    }
+    return values;
   }
 
   public String toString() {
