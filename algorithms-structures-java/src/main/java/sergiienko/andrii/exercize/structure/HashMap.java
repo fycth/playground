@@ -1,8 +1,8 @@
 package sergiienko.andrii.exercize.structure;
 
 import java.lang.reflect.Array;
-
-//todo add getKeys method
+import java.util.ArrayList;
+import java.util.List;
 
 //todo add getValues method
 
@@ -83,6 +83,17 @@ public class HashMap<K extends Comparable<K>, V> {
       }
       mapEntry = mapEntry.next;
     }
+  }
+
+  public List<K> getKeys() {
+    List<K> keys = new ArrayList<>();
+    for (MapEntry m : array) {
+      while (m != null) {
+        keys.add(m.key);
+        m = m.next;
+      }
+    }
+    return keys;
   }
 
   public String toString() {

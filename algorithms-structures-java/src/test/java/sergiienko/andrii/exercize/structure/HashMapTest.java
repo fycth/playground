@@ -2,10 +2,12 @@ package sergiienko.andrii.exercize.structure;
 
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
 import static junit.framework.TestCase.assertNull;
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class HashMapTest {
@@ -66,6 +68,27 @@ public class HashMapTest {
   }
   @Test
   public void case6() {
-    assertEquals("{  }", new HashMap<>().toString());
+    assertEquals("{ }", new HashMap<>().toString());
+  }
+  @Test
+  public void case7() {
+    assertEquals(0, new HashMap<>().getKeys().size());
+  }
+  @Test
+  public void case8() {
+    HashMap<String, String> hashMap = new HashMap<>();
+    Map<String, String> m = new java.util.HashMap<>();
+    Random r = new Random();
+    for (int i = 1000; i >= 0; i--) {
+      int key = r.nextInt(Integer.MAX_VALUE);
+      int value = r.nextInt(Integer.MAX_VALUE);
+      m.put(String.valueOf(key), String.valueOf(value));
+      hashMap.put(String.valueOf(key), String.valueOf(value));
+    }
+    List<String> keys = hashMap.getKeys();
+    for (Map.Entry<String, String> entry : m.entrySet()) {
+      String key = entry.getKey();
+      assertTrue(keys.contains(key));
+    }
   }
 }
