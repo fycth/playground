@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.Map;
 import java.util.Random;
 
+import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertEquals;
 
 public class HashMapTest {
@@ -41,5 +42,19 @@ public class HashMapTest {
       String value = entry.getValue();
       assertEquals(value, hashMap.get(key));
     }
+  }
+  @Test
+  public void case4() {
+    HashMap<String, String> hashMap = new HashMap<>();
+    hashMap.put("1", "Hello World !");
+    assertEquals("Hello World !", hashMap.get("1"));
+    hashMap.put("1", "2");
+    assertEquals("2", hashMap.get("1"));
+    hashMap.put("22", "12");
+    assertEquals("12", hashMap.get("22"));
+    hashMap.remove("22");
+    assertNull(hashMap.get("22"));
+    hashMap.remove("2");
+    assertNull(hashMap.get("2"));
   }
 }

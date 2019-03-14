@@ -2,8 +2,6 @@ package sergiienko.andrii.exercize.structure;
 
 import java.lang.reflect.Array;
 
-//todo add remove method
-
 //todo add toString method
 
 //todo add getKeys method
@@ -18,9 +16,8 @@ public class HashMap<K extends Comparable<K>, V> {
   private int size = 0;
   private MapEntry[] array = (MapEntry[])Array.newInstance(MapEntry.class, DEFAULT_CAPACITY);
 
-  // todo implement re-hash when array is growing or shrinking
   public void put(K key, V value) {
-    if (size >= array.length - array.length / 2) {
+    if (size >= array.length * 0.8) {
       MapEntry[] arrayOld = array;
       array = (MapEntry[])Array.newInstance(MapEntry.class, (int)(array.length * 1.5));
       size = 0;
@@ -70,6 +67,24 @@ public class HashMap<K extends Comparable<K>, V> {
       mapEntry = mapEntry.next;
     }
     return mapEntry == null ? null : mapEntry.value;
+  }
+
+  public void remove(K key) {
+    int hash = calculateHash(key);
+    MapEntry mapEntry = array[hash];
+    if (mapEntry == null) return;
+    if (mapEntry.key.compareTo(key) == 0) {
+      mapEntry = mapEntry.next;
+      array[hash] = mapEntry;
+      return;
+    }
+    while (mapEntry.next != null) {
+      if (mapEntry.next.key.compareTo(key) == 0) {
+        mapEntry.next = mapEntry.next.next;
+        return;
+      }
+      mapEntry = mapEntry.next;
+    }
   }
 
   private class MapEntry {
