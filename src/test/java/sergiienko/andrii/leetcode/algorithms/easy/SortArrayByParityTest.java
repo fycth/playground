@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class SortArrayByParityTest {
   @Test
   public void case1() {
-    int[] expected = new int[]{2,4,3,1};
+    int[] expected = new int[]{4,2,1,3};
     int[] actual = new SortArrayByParity().sortArrayByParity(new int[]{3,1,2,4});
     for (int i = 0; i < expected.length; i++) {
       assertEquals(expected[i], actual[i]);
