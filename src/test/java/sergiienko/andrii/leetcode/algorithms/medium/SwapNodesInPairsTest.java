@@ -1,13 +1,14 @@
 package sergiienko.andrii.leetcode.algorithms.medium;
 
 import org.junit.Test;
+import sergiienko.andrii.leetcode.helpers.ListNode;
 
 import static org.junit.Assert.assertEquals;
 
 public class SwapNodesInPairsTest {
   @Test
   public void case1() {
-    SwapNodesInPairs.ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2,3,4});
+    ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2,3,4});
     listNode = new SwapNodesInPairs().swapPairs(listNode);
     int[] actual = new SwapNodesInPairs().toArray(listNode);
     int[] expected = new int[]{2,1,4,3};
@@ -20,7 +21,7 @@ public class SwapNodesInPairsTest {
   }
   @Test
   public void case2() {
-    SwapNodesInPairs.ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2,3});
+    ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2,3});
     listNode = new SwapNodesInPairs().swapPairs(listNode);
     int[] actual = new SwapNodesInPairs().toArray(listNode);
     int[] expected = new int[]{2,1,3};
@@ -33,7 +34,7 @@ public class SwapNodesInPairsTest {
   }
   @Test
   public void case3() {
-    SwapNodesInPairs.ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2});
+    ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2});
     listNode = new SwapNodesInPairs().swapPairs(listNode);
     int[] actual = new SwapNodesInPairs().toArray(listNode);
     int[] expected = new int[]{2,1};
@@ -46,7 +47,7 @@ public class SwapNodesInPairsTest {
   }
   @Test
   public void case4() {
-    SwapNodesInPairs.ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1});
+    ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1});
     listNode = new SwapNodesInPairs().swapPairs(listNode);
     int[] actual = new SwapNodesInPairs().toArray(listNode);
     int[] expected = new int[]{1};
@@ -59,7 +60,7 @@ public class SwapNodesInPairsTest {
   }
   @Test
   public void case5() {
-    SwapNodesInPairs.ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2,3,4,5});
+    ListNode listNode = new SwapNodesInPairs().fromArray(new int[]{1,2,3,4,5});
     listNode = new SwapNodesInPairs().swapPairs(listNode);
     int[] actual = new SwapNodesInPairs().toArray(listNode);
     int[] expected = new int[]{2,1,4,3,5};

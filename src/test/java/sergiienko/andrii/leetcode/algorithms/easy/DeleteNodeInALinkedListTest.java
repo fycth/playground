@@ -1,14 +1,15 @@
 package sergiienko.andrii.leetcode.algorithms.easy;
 
 import org.junit.Test;
+import sergiienko.andrii.leetcode.helpers.ListNode;
 
 import static org.junit.Assert.assertEquals;
 
 public class DeleteNodeInALinkedListTest {
   @Test
   public void case1() {
-    DeleteNodeInALinkedList.ListNode listNode = new DeleteNodeInALinkedList().fromArray(new int[]{5,1,9});
-    DeleteNodeInALinkedList.ListNode l = new DeleteNodeInALinkedList().fromArray(new int[]{4});
+    ListNode listNode = new DeleteNodeInALinkedList().fromArray(new int[]{5,1,9});
+    ListNode l = new DeleteNodeInALinkedList().fromArray(new int[]{4});
     l.next = listNode;
     new DeleteNodeInALinkedList().deleteNode(listNode);
     int[] expected = new int[]{4,1,9};
@@ -22,8 +23,8 @@ public class DeleteNodeInALinkedListTest {
   }
   @Test
   public void case2() {
-    DeleteNodeInALinkedList.ListNode listNode = new DeleteNodeInALinkedList().fromArray(new int[]{1,9});
-    DeleteNodeInALinkedList.ListNode l = new DeleteNodeInALinkedList().fromArray(new int[]{4,5});
+    ListNode listNode = new DeleteNodeInALinkedList().fromArray(new int[]{1,9});
+    ListNode l = new DeleteNodeInALinkedList().fromArray(new int[]{4,5});
     l.next.next = listNode;
     new DeleteNodeInALinkedList().deleteNode(listNode);
     int[] expected = new int[]{4,5,9};

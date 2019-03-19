@@ -1,5 +1,7 @@
 package sergiienko.andrii.leetcode.algorithms.easy;
 
+import sergiienko.andrii.leetcode.helpers.ListNode;
+
 public class IntersectionOfTwoLinekdLists {
   public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
     ListNode a = headA;
@@ -14,15 +16,5 @@ public class IntersectionOfTwoLinekdLists {
       a = a.next;
     }
     return null;
-  }
-
-  class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-      val = x;
-      next = null;
-    }
   }
 }

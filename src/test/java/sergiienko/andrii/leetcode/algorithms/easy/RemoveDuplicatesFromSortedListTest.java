@@ -1,13 +1,14 @@
 package sergiienko.andrii.leetcode.algorithms.easy;
 
 import org.junit.Test;
+import sergiienko.andrii.leetcode.helpers.ListNode;
 
 import static org.junit.Assert.assertEquals;
 
 public class RemoveDuplicatesFromSortedListTest {
   @Test
   public void case1() {
-    RemoveDuplicatesFromSortedList.ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1,1,2});
+    ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1,1,2});
     listNode = new RemoveDuplicatesFromSortedList().deleteDuplicates(listNode);
     int[] actual = new RemoveDuplicatesFromSortedList().toArray(listNode);
     int[] expected = new int[]{1,2};
@@ -20,7 +21,7 @@ public class RemoveDuplicatesFromSortedListTest {
   }
   @Test
   public void case2() {
-    RemoveDuplicatesFromSortedList.ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1,1,2,3,3});
+    ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1,1,2,3,3});
     listNode = new RemoveDuplicatesFromSortedList().deleteDuplicates(listNode);
     int[] actual = new RemoveDuplicatesFromSortedList().toArray(listNode);
     int[] expected = new int[]{1,2,3};
@@ -33,7 +34,7 @@ public class RemoveDuplicatesFromSortedListTest {
   }
   @Test
   public void case3() {
-    RemoveDuplicatesFromSortedList.ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1});
+    ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1});
     listNode = new RemoveDuplicatesFromSortedList().deleteDuplicates(listNode);
     int[] actual = new RemoveDuplicatesFromSortedList().toArray(listNode);
     int[] expected = new int[]{1};
@@ -46,7 +47,7 @@ public class RemoveDuplicatesFromSortedListTest {
   }
   @Test
   public void case4() {
-    RemoveDuplicatesFromSortedList.ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1,2,3});
+    ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{1,2,3});
     listNode = new RemoveDuplicatesFromSortedList().deleteDuplicates(listNode);
     int[] actual = new RemoveDuplicatesFromSortedList().toArray(listNode);
     int[] expected = new int[]{1,2,3};
@@ -59,7 +60,7 @@ public class RemoveDuplicatesFromSortedListTest {
   }
   @Test
   public void case5() {
-    RemoveDuplicatesFromSortedList.ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{});
+    ListNode listNode = new RemoveDuplicatesFromSortedList().fromArray(new int[]{});
     listNode = new RemoveDuplicatesFromSortedList().deleteDuplicates(listNode);
     int[] actual = new RemoveDuplicatesFromSortedList().toArray(listNode);
     int[] expected = new int[]{};
