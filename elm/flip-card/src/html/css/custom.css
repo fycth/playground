@@ -1,0 +1,44 @@
+
+.card {
+    border: 1px solid #6c9faa;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 20px
+}
+
+.flip-container.flip .flipper, .flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+
+.flip-container {
+    -webkit-perspective: 1000px;
+    perspective: 1000px
+}
+
+.flipper {
+    -webkit-transition: .3s;
+    transition: .3s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d
+}
+
+.back, .front {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+.front {
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg)
+}
+
+.back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+
+
+
+
