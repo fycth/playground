@@ -3,9 +3,9 @@ package sergiienko.andrii.leetcode.algorithms.easy;
 import java.util.*;
 
 public class KeyboardRow {
-  Set<Character> r1 = new HashSet<>(Arrays.asList('q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'));
-  Set<Character> r2 = new HashSet<>(Arrays.asList('a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'));
-  Set<Character> r3 = new HashSet<>(Arrays.asList('z', 'x', 'c', 'v', 'b', 'n', 'm'));
+  private Set<Character> r1 = new HashSet<>(Arrays.asList('q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'));
+  private Set<Character> r2 = new HashSet<>(Arrays.asList('a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'));
+  private Set<Character> r3 = new HashSet<>(Arrays.asList('z', 'x', 'c', 'v', 'b', 'n', 'm'));
 
   public String[] findWords(String[] words) {
     List<String> res = new ArrayList<>();
